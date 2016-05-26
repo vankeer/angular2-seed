@@ -58,6 +58,7 @@
     "gulp-filter": "^4.0.0",
     "gulp-inject": "^4.0.0",
     "gulp-inline-ng2-template": "^1.1.2",
+    "gulp-jade": "^1.1.0",
     "gulp-load-plugins": "^1.2.2",
     "gulp-plumber": "~1.1.0",
     "gulp-postcss": "^6.1.1",

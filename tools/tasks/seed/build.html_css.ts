@@ -34,6 +34,13 @@ function prepareTemplates() {
     .pipe(gulp.dest(TMP_DIR));
 }
 
+
+function processJade() {
+  return gulp.src(join(APP_SRC, '**', '*.jade'))
+    .pipe(plugins.jade())
+    .pipe(gulp.dest(TMP_DIR));
+}
+
 /**
  * Processes the CSS files within `src/client` excluding those in `src/client/assets` using `postcss` with the
  * configured processors.
@@ -70,4 +77,4 @@ function getExternalCss() {
 /**
  * Executes the build process, processing the HTML and CSS files.
  */
-export = () => merge(processComponentCss(), prepareTemplates(), processExternalCss());
+export = () => merge(processComponentCss(), prepareTemplates(), processJade(), processExternalCss());

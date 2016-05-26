@@ -1,0 +1,58 @@
+h1 Jade - node template engine
+p.
+  Jade is a terse and simple
+  templating language with a
+  strong focus on performance
+  and powerful features.
+
+h1 Some examples...
+
+h2 ids and classes
+
+#an-id
+  .a-class
+    input#input-id.input-class.another-class
+
+h2 Nesting
+
+ul#nesting
+  li
+    a(href="#link-a") Link A
+  li
+    a(href="#link-b") Link B
+
+h2 Variables, if, unless, case
+
+- var whatIsThis = "Jade"
+
+if whatIsThis == "Jade"
+  p This is Jade.
+else
+  p This is not Jade.
+
+unless whatIsThis != "Jade"
+  p This is awesome.
+
+case whatIsThis
+  when "HTML"
+    p Just HTML
+  when "Jade"
+    p Waw, Jade!
+  default
+    p It's #{whatIsThis}!
+
+h2 Mixins
+
+-
+  var people = [
+    {"name": "Alice", "year": "1980"},
+    {"name": "Bob", "year": "1990"},
+    {"name": "Charles", "year": "2000"}
+  ]
+
+mixin person(number, name, year)
+  li#person Person #{number} (#{name}) was born in #{year}
+
+ul#people
+  each person, i in people
+    +person(i, person.name, person.year)
