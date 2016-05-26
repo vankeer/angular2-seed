@@ -1,0 +1,33 @@
+mixin heroField(fieldType, prettyName, fieldName, changeFunction)
+  -
+    attributes["type"] = fieldType
+    attributes["[value]"] = "hero." + fieldName
+    attributes["(change)"] = changeFunction + "(" + fieldName + "Field.value)"
+    attributes["#" + fieldName + "Field"] = ""
+  .hero-field
+      label What is the hero's #{prettyName}?
+      input&attributes(attributes)
+
++heroField("text", "name", "name", "changeName")
++heroField("number", "power level", "powerLevel", "changePowerLevel")
+
+// Same as:
+//
+//.hero-field
+//  label What is the hero's name?
+//  input(
+//  type="text",
+//  [value]="hero.name",
+//  (change)="changeName(nameField.value)",
+//  #nameField=""
+//)
+//.hero-field
+//  label What is the hero's power level?
+//  input(
+//  type="number",
+//  [value]="hero.powerLevel",
+//  (change)="changePowerLevel(powerLevelField.value)",
+//  #powerLevelField=""
+//)
+
+button("(click)"="createHero()") Create

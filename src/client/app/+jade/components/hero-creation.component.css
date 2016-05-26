@@ -1,0 +1,11 @@
+:host input {
+  margin-left: 20px;
+}
+
+:host > .hero-field {
+  display: block;
+}
+
+:host > .hero-field:not(:first-child) {
+  margin-top: 20px;
+}

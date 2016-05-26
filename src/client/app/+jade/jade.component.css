@@ -1,0 +1,8 @@
+:host {
+  display: block;
+  padding: 0 16px;
+}
+
+:host > #heroes > hero-detail:not(:first-child) {
+  margin-top: 20px;
+}
